@@ -56,11 +56,11 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
 
     $sql = "INSERT INTO counter(counterNumber) VALUES (1)";
     
-    if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    //if ($conn->query($sql) === TRUE) {
+      //echo "New record created successfully";
+    //} else {
+      //echo "Error: " . $sql . "<br>" . $conn->error;
+    //}
     
     $conn->close();  
 
