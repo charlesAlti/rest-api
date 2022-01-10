@@ -37,6 +37,34 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
             break;
     }  
 
+    //Get Heroku ClearDB connection information
+    $cleardb_url = parse_url(getenv("mysql://b580e2e1d215bc:0b2146f6@us-cdbr-east-05.cleardb.net/heroku_64303e76fdaefc4?reconnect=true"));
+    $cleardb_server = $cleardb_url["host"];
+    $cleardb_username = $cleardb_url["user"];
+    $cleardb_password = $cleardb_url["pass"];
+    $cleardb_db = substr($cleardb_url["path"],1);
+    $active_group = 'default';
+    $query_builder = TRUE;
+    // Connect to DB
+    $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);    
+
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO counter (counterNumber)
+    VALUES (1)";
+    
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    $conn->close();    
+
+    //echo "Connected successfully";
     echo json_encode($arr);
 }
 
