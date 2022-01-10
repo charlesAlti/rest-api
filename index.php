@@ -57,12 +57,10 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
     $sql = "INSERT INTO counter(counterNumber) VALUES (1)";
     
     if ($conn->query($sql) === TRUE) {
-        echo json_encode($arr);
+        $conn->close();  
     } else {
-        echo json_encode($arr);
-    }
-    
-    $conn->close();  
+        $conn->close();  
+    }    
 
     //echo "Connected successfully";
     echo json_encode($arr);
