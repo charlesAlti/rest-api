@@ -55,7 +55,7 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO restapi (id, price, quantity) VALUES ('$id', '$price', '$quantity')";
+    $sql = "INSERT INTO restapi (id, quantity, price ) VALUES ('$id', '$quantity', '$price')";
     if ($conn->query($sql) === TRUE) {
         $conn->close();  
     } else {
