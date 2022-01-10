@@ -15,13 +15,14 @@ header('Content-type:application/json;charset=utf-8');
 }*/
 
 //Receive the RAW post data.
-//$content = trim(file_get_contents("php://input"));
+$content = trim(file_get_contents("php://input"));
 
 //Attempt to decode the incoming RAW post data from JSON.
-//$decoded = json_decode($content, true);
+$decoded = json_decode($content, true);
 
-//$app = strtoupper($decoded['API']);
-//$key = $decoded['APIKEY'];
+$id = $decoded['Id'];
+$quantity = $decoded['Quantity'];
+$price = $decoded['Price'];
 $key = "BEAF1CB722A3F7758C7A7FA43F6BF2D1";
 $app = "TIME";
 
@@ -54,7 +55,7 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO counter(counterNumber) VALUES (1)";
+    $sql = "INSERT INTO restapi (id, quantity, price) VALUES (:id, :quantity, :price)";    
     
     if ($conn->query($sql) === TRUE) {
         $conn->close();  
