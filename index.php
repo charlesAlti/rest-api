@@ -2,9 +2,9 @@
 header('Content-type:application/json;charset=utf-8');
 
 //Make sure that it is a POST request.
-/*if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0){
+if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0){
     throw new Exception('Request method must be POST!');
-}*/
+}
 
 //Make sure that the content type of the POST request has been set to application/json
 //$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
