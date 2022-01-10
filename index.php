@@ -56,11 +56,11 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
     }
 
     $sql = "INSERT INTO restapi (id, price, quantity) VALUES ('$id', '$price', '$quantity')";
-    /*if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE) {
         $conn->close();  
     } else {
         $conn->close();  
-    }  */  
+    }    
 
     //echo "Connected successfully";
     echo json_encode($arr);
