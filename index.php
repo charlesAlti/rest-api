@@ -53,8 +53,7 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO counter (counterNumber)
-    VALUES (1)";
+    /*$sql = "INSERT INTO counter (counterNumber) VALUES (1)";
     
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
@@ -62,7 +61,7 @@ if ( $key == "BEAF1CB722A3F7758C7A7FA43F6BF2D1" )
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
     
-    $conn->close();    
+    $conn->close();  */  
 
     //echo "Connected successfully";
     echo json_encode($arr);
